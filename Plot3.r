@@ -10,7 +10,7 @@ BaltimoreSub <- subset(Data, Data$fips == "24510" )
 
 EachYearTotType_Baltimore <- aggregate(Emissions ~ year+type , BaltimoreSub , sum)
 
-png("Plot3.png", width=480, height=480)
+png("Plot3.png", width=690, height=480)
 g <- ggplot(data = EachYearTotType_Baltimore, aes(year,Emissions))
 p <-(g+ geom_point() + facet_grid(~type) + geom_smooth(method = 'lm') + theme_dark())
 print(p)
